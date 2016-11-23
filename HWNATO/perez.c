@@ -7,6 +7,7 @@
 #include <stdlib.h>
 
 
+//takes a source, writes to desitination with nato phonics
 void Natoify(char* source, char* dest) {
 	char stringer[1000];
 	strcpy(stringer, "");
@@ -134,78 +135,68 @@ void Natoify(char* source, char* dest) {
 
 }
 
-int main() {
-
-	printf("Hello, world!\n");
+//do English To Nato Proccessing
+void EnglishToNato() {
+	printf("English --> NATO\n");
 	char filename[] = "words.txt";
 	FILE* file = fopen(filename, "r");
 
 
 	char line[2000];
 	while (fgets(line, sizeof line, file) != NULL) /* read a line from a file */ {
-		char* natoed[2000];
+		char* natoed[4000];
 		Natoify(line, natoed);
-		printf( line); //print the file contents on stdout.
-		printf("\n");
-		printf(natoed); 
+		printf(line); //print the file contents on stdout.
+		printf(" -->\n");
+		printf(natoed);
 		printf("\n\n");
 
 	}
 
-	//char *strs[10000];
-	//int index = 0;
-	//int cha;
-	//while (cha = fgetc(file) != EOF) {
-	//	switch (cha)
-	//	{
-	//	case 'a':
-	//	case 'A':
-	//		strs[index] = malloc(strlen("Alfa") + 1);
-	//		strcpy(strs[index], "Alfa");
-	//		break;
-	//	case 'b':
-	//	case 'B':
-	//		strs[index] = malloc(strlen("Bravo") + 1);
-	//		strcpy(strs[index], "Bravo");
-	//		break;
-	//	case 'c':
-	//	case 'C':
-	//		strs[index] = malloc(strlen("Charlie") + 1);
-	//		strcpy(strs[index], "Charlie");
-	//		break;
-	//	case 'd':
-	//	case 'D':
-	//		strs[index] = malloc(strlen("Delta") + 1);
-	//		strcpy(strs[index], "Delta");
-	//		break;
-	//	default:
-	//		strs[index] = malloc(strlen("0") + 1);
-	//		strcpy(strs[index], "0");
-	//		//strcpy(strs[index], tempStr);
+	fclose(file);
+}
 
-	//		break;
-	//	}
+void NatoToEnglish() {
+	printf("English --> NATO\n");
+	char filename[] = "words.txt";
+	FILE* file = fopen(filename, "r");
 
 
-	//	index++;
+	char line[2000];
+	while (fgets(line, sizeof line, file) != NULL) /* read a line from a file */ {
+		char* english[2000];
+		//Englishfy(line, english);
+		printf(line); //print the file contents on stdout.
+		printf(" -->\n");
+		//printf(english);
+		printf("\n\n");
 
-
-	//}
-
-
-	//char* betterLength[index + 1];
-
+	}
 
 	fclose(file);
+}
 
+int main() {
+	char input = 'l';
+	do {
+		printf("Enter n for english to NATO, Press e for NATO to english.\n");
+		printf("Words will be taken from words.txt.  press q to quit\n");
+		input = getchar();
+		getchar(); //use to clear enter
+		printf("\n");
 
-	/*int cnt;
-	for (cnt = 0; cnt < index; cnt++) {
-		printf(strs[cnt]);
+		if (input == 'n') {
+			EnglishToNato();
+		}
+		
+		if(input == 'e')
+		{
+			NatoToEnglish();
+		}
 
-	}*/
+		
+	} while (input != 'q' && input != 'Q');
 
-	char c = getchar();
 
 	return 0;
 }
