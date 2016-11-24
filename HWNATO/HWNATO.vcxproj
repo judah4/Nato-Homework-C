@@ -149,6 +149,7 @@
     <ClCompile Include="perez.c" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="words-nato.txt" />
     <Text Include="words.txt">
       <DeploymentContent>true</DeploymentContent>
     </Text>

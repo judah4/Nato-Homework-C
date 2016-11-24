@@ -23,5 +23,8 @@
     <Text Include="words.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="words-nato.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
