@@ -18,7 +18,7 @@ void Natoify(char* source, char* dest) {
 		{
 		case 'a':
 		case 'A':
-			strcat(stringer, "Alpha");
+			strcat(stringer, "Alfa");
 
 			break;
 		case 'b':
@@ -135,128 +135,120 @@ void Natoify(char* source, char* dest) {
 
 }
 
+//convert nato words to english
 void Englishfy(char* source, char* dest) {
 	char stringer[2000];
 	strcpy(stringer, "");
 	int length = strlen(source);
+
+	int startCnt = -1;
 	int cnt;
-	for (cnt = 0; cnt < length; cnt++) {
+	char nato[100];
+	strcpy(nato, "");
+
+
+	//loop length plus one for null terminator
+	for (cnt = 0; cnt < length+1; cnt++) {
+
+		if ((source[cnt] >= 'A' && source[cnt] <= 'Z') || source[cnt] == '\0' || source[cnt] == '\n' || source[cnt] == ' ') { //cap
+			if (startCnt == -1) {
+				startCnt = 0;
+			}
+			else {
+				strcpy(nato, "");
+				strncat(nato, source + startCnt, cnt - startCnt);
+				startCnt = cnt;
+
+				if (strcmp(nato, "Alfa") == 0) {
+					strcat(stringer, "a");
+				}
+				if (strcmp(nato, "Bravo") == 0) {
+					strcat(stringer, "b");
+				}
+				if (strcmp(nato, "Charlie") == 0) {
+					strcat(stringer, "c");
+				}
+				if (strcmp(nato, "Delta") == 0) {
+					strcat(stringer, "d");
+				}
+				if (strcmp(nato, "Echo") == 0) {
+					strcat(stringer, "e");
+				}
+				if (strcmp(nato, "Foxtrot") == 0) {
+					strcat(stringer, "f");
+				}
+				if (strcmp(nato, "Golf") == 0) {
+					strcat(stringer, "g");
+				}
+				if (strcmp(nato, "Hotel") == 0) {
+					strcat(stringer, "h");
+				}
+				if (strcmp(nato, "India") == 0) {
+					strcat(stringer, "i");
+				}
+				if (strcmp(nato, "Juliett") == 0) {
+					strcat(stringer, "j");
+				}
+				if (strcmp(nato, "Kilo") == 0) {
+					strcat(stringer, "k");
+				}
+				if (strcmp(nato, "Lima") == 0) {
+					strcat(stringer, "l");
+				}
+				if (strcmp(nato, "Mike") == 0) {
+					strcat(stringer, "m");
+				}
+				if (strcmp(nato, "November") == 0) {
+					strcat(stringer, "n");
+				}
+				if (strcmp(nato, "Oscar") == 0) {
+					strcat(stringer, "o");
+				}
+				if (strcmp(nato, "Papa") == 0) {
+					strcat(stringer, "p");
+				}
+				if (strcmp(nato, "Quebec") == 0) {
+					strcat(stringer, "q");
+				}
+				if (strcmp(nato, "Romeo") == 0) {
+					strcat(stringer, "r");
+				}
+				if (strcmp(nato, "Sierra") == 0) {
+					strcat(stringer, "s");
+				}
+				if (strcmp(nato, "Tango") == 0) {
+					strcat(stringer, "t");
+				}
+				if (strcmp(nato, "Uniform") == 0) {
+					strcat(stringer, "u");
+				}
+				if (strcmp(nato, "Victor") == 0) {
+					strcat(stringer, "v");
+				}
+				if (strcmp(nato, "Whiskey") == 0) {
+					strcat(stringer, "w");
+				}
+				if (strcmp(nato, "X-ray") == 0) {
+					strcat(stringer, "x");
+				}
+				if (strcmp(nato, "Yankee") == 0) {
+					strcat(stringer, "y");
+				}
+				if (strcmp(nato, "Zulu") == 0) {
+					strcat(stringer, "z");
+				}
+
+			}
+		}
+
 		switch (source[cnt])
 		{
-		case 'a':
-		case 'A':
-			strcat(stringer, "Alpha");
-
-			break;
-		case 'b':
-		case 'B':
-			strcat(stringer, "Bravo");
-
-			break;
-		case 'c':
-		case 'C':
-			strcat(stringer, "Charlie");
-
-			break;
-		case 'd':
-		case 'D':
-			strcat(stringer, "Delta");
-
-			break;
-		case 'e':
-		case 'E':
-			strcat(stringer, "Echo");
-			break;
-		case 'f':
-		case 'F':
-			strcat(stringer, "Foxtrot");
-			break;
-		case 'g':
-		case 'G':
-			strcat(stringer, "Golf");
-			break;
-		case 'h':
-		case 'H':
-			strcat(stringer, "Hotel");
-			break;
-		case 'i':
-		case 'I':
-			strcat(stringer, "India");
-			break;
-		case 'j':
-		case 'J':
-			strcat(stringer, "Juliett");
-			break;
-		case 'k':
-		case 'K':
-			strcat(stringer, "Kilo");
-			break;
-		case 'l':
-		case 'L':
-			strcat(stringer, "Lima");
-			break;
-		case 'm':
-		case 'M':
-			strcat(stringer, "Mike");
-			break;
-		case 'n':
-		case 'N':
-			strcat(stringer, "November");
-			break;
-		case 'o':
-		case 'O':
-			strcat(stringer, "Oscar");
-			break;
-		case 'p':
-		case 'P':
-			strcat(stringer, "Papa");
-			break;
-		case 'q':
-		case 'Q':
-			strcat(stringer, "Quebec");
-			break;
-		case 'r':
-		case 'R':
-			strcat(stringer, "Romeo");
-			break;
-		case 's':
-		case 'S':
-			strcat(stringer, "Sierra");
-			break;
-		case 't':
-		case 'T':
-			strcat(stringer, "Tango");
-			break;
-		case 'u':
-		case 'U':
-			strcat(stringer, "Uniform");
-			break;
-		case 'v':
-		case 'V':
-			strcat(stringer, "Victor");
-			break;
-		case 'w':
-		case 'W':
-			strcat(stringer, "Whiskey");
-			break;
-		case 'x':
-		case 'X':
-			strcat(stringer, "X-ray");
-			break;
-		case 'y':
-		case 'Y':
-			strcat(stringer, "Yankee");
-			break;
-		case 'z':
-		case 'Z':
-			strcat(stringer, "Zulu");
-			break;
-		case '\n':
-			break;
 		case ' ':
 			strcat(stringer, " ");
+			startCnt = cnt; //reset word length after a space
 			break;
 		}
+
 	}
 	strcpy(dest, stringer);
 
