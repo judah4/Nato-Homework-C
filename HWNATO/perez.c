@@ -10,8 +10,8 @@
 //takes a source, writes to desitination with nato phonics
 void Natoify(char* source, char* dest) 
 {
-	char stringer[4000];
-	strcpy(stringer, "");
+	char buildString[4000];
+	strcpy(buildString, "");
 	int length = strlen(source);
 	int cnt;
 	for (cnt = 0; cnt < length; cnt++) 
@@ -20,128 +20,128 @@ void Natoify(char* source, char* dest)
 		{
 		case 'a':
 		case 'A':
-			strcat(stringer, "Alfa");
+			strcat(buildString, "Alfa");
 
 			break;
 		case 'b':
 		case 'B':
-			strcat(stringer, "Bravo");
+			strcat(buildString, "Bravo");
 
 			break;
 		case 'c':
 		case 'C':
-			strcat(stringer, "Charlie");
+			strcat(buildString, "Charlie");
 
 			break;
 		case 'd':
 		case 'D':
-			strcat(stringer, "Delta");
+			strcat(buildString, "Delta");
 
 			break;
 		case 'e':
 		case 'E':
-			strcat(stringer, "Echo");
+			strcat(buildString, "Echo");
 			break;
 		case 'f':
 		case 'F':
-			strcat(stringer, "Foxtrot");
+			strcat(buildString, "Foxtrot");
 			break;
 		case 'g':
 		case 'G':
-			strcat(stringer, "Golf");
+			strcat(buildString, "Golf");
 			break;
 		case 'h':
 		case 'H':
-			strcat(stringer, "Hotel");
+			strcat(buildString, "Hotel");
 			break;
 		case 'i':
 		case 'I':
-			strcat(stringer, "India");
+			strcat(buildString, "India");
 			break;
 		case 'j':
 		case 'J':
-			strcat(stringer, "Juliett");
+			strcat(buildString, "Juliett");
 			break;
 		case 'k':
 		case 'K':
-			strcat(stringer, "Kilo");
+			strcat(buildString, "Kilo");
 			break;
 		case 'l':
 		case 'L':
-			strcat(stringer, "Lima");
+			strcat(buildString, "Lima");
 			break;
 		case 'm':
 		case 'M':
-			strcat(stringer, "Mike");
+			strcat(buildString, "Mike");
 			break;
 		case 'n':
 		case 'N':
-			strcat(stringer, "November");
+			strcat(buildString, "November");
 			break;
 		case 'o':
 		case 'O':
-			strcat(stringer, "Oscar");
+			strcat(buildString, "Oscar");
 			break;
 		case 'p':
 		case 'P':
-			strcat(stringer, "Papa");
+			strcat(buildString, "Papa");
 			break;
 		case 'q':
 		case 'Q':
-			strcat(stringer, "Quebec");
+			strcat(buildString, "Quebec");
 			break;
 		case 'r':
 		case 'R':
-			strcat(stringer, "Romeo");
+			strcat(buildString, "Romeo");
 			break;
 		case 's':
 		case 'S':
-			strcat(stringer, "Sierra");
+			strcat(buildString, "Sierra");
 			break;
 		case 't':
 		case 'T':
-			strcat(stringer, "Tango");
+			strcat(buildString, "Tango");
 			break;
 		case 'u':
 		case 'U':
-			strcat(stringer, "Uniform");
+			strcat(buildString, "Uniform");
 			break;
 		case 'v':
 		case 'V':
-			strcat(stringer, "Victor");
+			strcat(buildString, "Victor");
 			break;
 		case 'w':
 		case 'W':
-			strcat(stringer, "Whiskey");
+			strcat(buildString, "Whiskey");
 			break;
 		case 'x':
 		case 'X':
-			strcat(stringer, "X-ray");
+			strcat(buildString, "X-ray");
 			break;
 		case 'y':
 		case 'Y':
-			strcat(stringer, "Yankee");
+			strcat(buildString, "Yankee");
 			break;
 		case 'z':
 		case 'Z':
-			strcat(stringer, "Zulu");
+			strcat(buildString, "Zulu");
 			break;
 		case '\n':
 			break;
 		case ' ':
-			strcat(stringer, " ");
+			strcat(buildString, " ");
 			break;
 		}
 	}
-	strcpy(dest, stringer);
+	strcpy(dest, buildString);
 
 }
 
 //convert nato words to english
 void Englishfy(char* source, char* dest) 
 {
-	char stringer[2000];
-	strcpy(stringer, "");
+	char buildString[2000];
+	strcpy(buildString, "");
 	int length = strlen(source);
 
 	int startCnt = -1;
@@ -166,82 +166,82 @@ void Englishfy(char* source, char* dest)
 				startCnt = cnt;
 
 				if (strcmp(nato, "Alfa") == 0) {
-					strcat(stringer, "a");
+					strcat(buildString, "a");
 				}
 				if (strcmp(nato, "Bravo") == 0) {
-					strcat(stringer, "b");
+					strcat(buildString, "b");
 				}
 				if (strcmp(nato, "Charlie") == 0) {
-					strcat(stringer, "c");
+					strcat(buildString, "c");
 				}
 				if (strcmp(nato, "Delta") == 0) {
-					strcat(stringer, "d");
+					strcat(buildString, "d");
 				}
 				if (strcmp(nato, "Echo") == 0) {
-					strcat(stringer, "e");
+					strcat(buildString, "e");
 				}
 				if (strcmp(nato, "Foxtrot") == 0) {
-					strcat(stringer, "f");
+					strcat(buildString, "f");
 				}
 				if (strcmp(nato, "Golf") == 0) {
-					strcat(stringer, "g");
+					strcat(buildString, "g");
 				}
 				if (strcmp(nato, "Hotel") == 0) {
-					strcat(stringer, "h");
+					strcat(buildString, "h");
 				}
 				if (strcmp(nato, "India") == 0) {
-					strcat(stringer, "i");
+					strcat(buildString, "i");
 				}
 				if (strcmp(nato, "Juliett") == 0) {
-					strcat(stringer, "j");
+					strcat(buildString, "j");
 				}
 				if (strcmp(nato, "Kilo") == 0) {
-					strcat(stringer, "k");
+					strcat(buildString, "k");
 				}
 				if (strcmp(nato, "Lima") == 0) {
-					strcat(stringer, "l");
+					strcat(buildString, "l");
 				}
 				if (strcmp(nato, "Mike") == 0) {
-					strcat(stringer, "m");
+					strcat(buildString, "m");
 				}
 				if (strcmp(nato, "November") == 0) {
-					strcat(stringer, "n");
+					strcat(buildString, "n");
 				}
 				if (strcmp(nato, "Oscar") == 0) {
-					strcat(stringer, "o");
+					strcat(buildString, "o");
 				}
 				if (strcmp(nato, "Papa") == 0) {
-					strcat(stringer, "p");
+					strcat(buildString, "p");
 				}
 				if (strcmp(nato, "Quebec") == 0) {
-					strcat(stringer, "q");
+					strcat(buildString, "q");
 				}
 				if (strcmp(nato, "Romeo") == 0) {
-					strcat(stringer, "r");
+					strcat(buildString, "r");
 				}
 				if (strcmp(nato, "Sierra") == 0) {
-					strcat(stringer, "s");
+					strcat(buildString, "s");
 				}
 				if (strcmp(nato, "Tango") == 0) {
-					strcat(stringer, "t");
+					strcat(buildString, "t");
 				}
 				if (strcmp(nato, "Uniform") == 0) {
-					strcat(stringer, "u");
+					strcat(buildString, "u");
 				}
 				if (strcmp(nato, "Victor") == 0) {
-					strcat(stringer, "v");
+					strcat(buildString, "v");
 				}
 				if (strcmp(nato, "Whiskey") == 0) {
-					strcat(stringer, "w");
+					strcat(buildString, "w");
 				}
 				if (strcmp(nato, "X-ray") == 0) {
-					strcat(stringer, "x");
+					strcat(buildString, "x");
 				}
 				if (strcmp(nato, "Yankee") == 0) {
-					strcat(stringer, "y");
+					strcat(buildString, "y");
 				}
 				if (strcmp(nato, "Zulu") == 0) {
-					strcat(stringer, "z");
+					strcat(buildString, "z");
 				}
 
 			}
@@ -250,13 +250,13 @@ void Englishfy(char* source, char* dest)
 		switch (source[cnt])
 		{
 		case ' ':
-			strcat(stringer, " ");
+			strcat(buildString, " ");
 			startCnt = cnt; //reset word length after a space
 			break;
 		}
 
 	}
-	strcpy(dest, stringer);
+	strcpy(dest, buildString);
 
 }
 
