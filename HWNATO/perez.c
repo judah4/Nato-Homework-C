@@ -8,12 +8,14 @@
 
 
 //takes a source, writes to desitination with nato phonics
-void Natoify(char* source, char* dest) {
+void Natoify(char* source, char* dest) 
+{
 	char stringer[4000];
 	strcpy(stringer, "");
 	int length = strlen(source);
 	int cnt;
-	for (cnt = 0; cnt < length; cnt++) {
+	for (cnt = 0; cnt < length; cnt++) 
+	{
 		switch (source[cnt])
 		{
 		case 'a':
@@ -136,7 +138,8 @@ void Natoify(char* source, char* dest) {
 }
 
 //convert nato words to english
-void Englishfy(char* source, char* dest) {
+void Englishfy(char* source, char* dest) 
+{
 	char stringer[2000];
 	strcpy(stringer, "");
 	int length = strlen(source);
@@ -150,11 +153,14 @@ void Englishfy(char* source, char* dest) {
 	//loop length plus one for null terminator
 	for (cnt = 0; cnt < length+1; cnt++) {
 
-		if ((source[cnt] >= 'A' && source[cnt] <= 'Z') || source[cnt] == '\0' || source[cnt] == '\r' || source[cnt] == '\n' || source[cnt] == ' ') { //cap
-			if (startCnt == -1) {
+		if ((source[cnt] >= 'A' && source[cnt] <= 'Z') || source[cnt] == '\0' || source[cnt] == '\r' || source[cnt] == '\n' || source[cnt] == ' ') 
+		{ 
+			if (startCnt == -1) 
+			{
 				startCnt = 0;
 			}
-			else {
+			else 
+			{
 				strcpy(nato, "");
 				strncat(nato, source + startCnt, cnt - startCnt);
 				startCnt = cnt;
@@ -256,7 +262,8 @@ void Englishfy(char* source, char* dest) {
 
 
 //do English To Nato Proccessing
-void EnglishToNato() {
+void EnglishToNato() 
+{
 	printf("English --> NATO\n");
 	char filename[] = "words.txt";
 	FILE* file = fopen(filename, "r");
@@ -276,7 +283,9 @@ void EnglishToNato() {
 	fclose(file);
 }
 
-void NatoToEnglish() {
+//do nato to english proccessing
+void NatoToEnglish() 
+{
 	printf("English --> NATO\n");
 	char filename[] = "words.txt";
 	FILE* file = fopen(filename, "r");
@@ -296,9 +305,12 @@ void NatoToEnglish() {
 	fclose(file);
 }
 
-int main() {
+int main() 
+{
 	char input = 'l';
-	do {
+	//do user input loop
+	do 
+	{
 		printf("Enter n for english to NATO, Press e for NATO to english.\n");
 		printf("Words will be taken from words.txt.  press q to quit\n");
 		input = getchar();
