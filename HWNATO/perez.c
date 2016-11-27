@@ -150,7 +150,7 @@ void Englishfy(char* source, char* dest) {
 	//loop length plus one for null terminator
 	for (cnt = 0; cnt < length+1; cnt++) {
 
-		if ((source[cnt] >= 'A' && source[cnt] <= 'Z') || source[cnt] == '\0' || source[cnt] == '\n' || source[cnt] == ' ') { //cap
+		if ((source[cnt] >= 'A' && source[cnt] <= 'Z') || source[cnt] == '\0' || source[cnt] == '\r' || source[cnt] == '\n' || source[cnt] == ' ') { //cap
 			if (startCnt == -1) {
 				startCnt = 0;
 			}
@@ -278,7 +278,7 @@ void EnglishToNato() {
 
 void NatoToEnglish() {
 	printf("English --> NATO\n");
-	char filename[] = "words-nato.txt";
+	char filename[] = "words.txt";
 	FILE* file = fopen(filename, "r");
 
 
